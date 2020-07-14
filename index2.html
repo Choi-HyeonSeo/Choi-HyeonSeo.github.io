@@ -22,24 +22,156 @@
 	header{
 		width:1250px;
 		height:100px;
+		position: fixed;
+		background-color: white;
+		z-index: 12;
 		/*margin-top: 10px;*/
 		/*border:dotted 1px #bbbbbb;*/
 	}
-	
+	/*#fix{
+		position:fixed;
+	}*/
 	nav{
 		width:1250px;
 		height:50px;
-		margin-top: 10px;
-		padding-left: 20px;
+		margin-top: 100px;
+		padding-bottom:10px; 
+		padding-left: 40px;
+		background-color: white;
+		position:fixed;
+		z-index: 11;
+		border-bottom: 1px solid #E9E8ED;
 		/*border:dotted 1px #bbbbbb;*/
 	}
 	nav li{
-		display:inline-block;
-		margin:15px 15px 0px 30px;
+		/*display:inline-block;*/
+		/*margin:10px 15px 0px 30px;*/
 		font-weight:50%;
 		font-size:18px;
 		text-align: center;
 	}
+	.dropdown{
+		display:inline-block;		
+		border:solid 0px #bbbbbb;
+		position:relative;		
+	}
+	.dropdownContents{
+		display:none;		
+		background-color: white;
+		width:170px;
+		padding:12px 16px;
+		line-height: 40px;
+		border: solid 1px #E9E8ED;
+		border-top: solid 1px black;
+		position:absolute;
+		z-index: 99;		
+	}
+	.dropdownContents>div{
+		font-size:17px ;
+		font-weight: bold;
+		color:#0B1852;
+		text-align: center;
+		border-bottom: 1px solid #E9E8ED;
+	}
+	.dropdownContents span{
+		font-style: italic;
+		width:10px;
+		font-weight: bold;
+		/*margin-right:25px;*/
+	}
+	.dropdownContents li{
+		font-size: 13px;
+	}
+	.dropdownContents label{
+		margin-left:25px;
+	}
+	.dropdown:active .dropdownContents{	
+		display:block;
+	}
+
+
+	/*nav 드롭다운 묶음*/
+	#menu1{
+		background-color: white;
+		margin-bottom:30px;
+	}
+	#menu1>ul{
+		position:relative;
+	}
+
+	
+	/*큰항목*/
+	#menu1 .main>li{
+		float:left;
+		height:40px;
+		line-height:50px;
+		text-align:center;
+		z-index: 13;
+		margin:10px 15px 0px 30px;
+	}
+	/*큰항목 제목색 바뀜*/
+	#menu1 .main>li a:hover{
+		color:#2CAB87;
+	}
+	#menu1 .main>li:hover .menu2{
+		display:block;
+	}
+	#menu1 .menu2{
+		position:absolute;
+		top:50px;
+		left:0;
+		width:1250px;
+		display:none;
+		background-color: white;
+		box-shadow: 0px 1px 3px gray;
+	}
+	#menu1 .sub{
+		float:left;
+		/*padding-right:10px;*/
+		padding-left:30px;
+		/*width:25%;*/
+	}
+	#menu1 .sub>li{
+		background-color: white;
+		font-size: 17px;
+		text-align:left;
+		font-weight: bold;
+	}
+
+	/*중간항목*/
+	.main .sub>li{
+		width: 200px;
+		z-index: 12;
+	}
+	.main .sub>li a{
+		font-size: 13px;
+	}
+	.sub li img{
+		left:70px;
+	}
+
+	/*작은 항목*/
+	#sub_sub li{
+		font-size: 12px;
+		text-align:left;
+		padding-right: 10px;
+		padding-left: 10px;
+		color:black;
+	}
+	#sub_sub li:hover{
+		background-color: #2CAB87;
+		color:white;
+	}
+	.minibox{
+
+	}
+	.sub .miniBox a{
+		padding:10px 60px 10px 10px;
+		width:170px;
+		background-color: #E9E8ED;
+		border:1px solid gray;
+	}
+
 	#logo{
 		float:left;
 		margin-top: 10px;
@@ -74,8 +206,13 @@
 		float:left;
 		margin-top: 30px;
 		margin-left: 80px;
+		z-index: 99;
+		background-color: white;
 	}
-	#top{
+	#ChartArrow:active{
+		transform:rotate(180deg);
+	}
+	.top{
 		float:right;
 		margin: 45px 20px 0 0;
 	}
@@ -90,31 +227,44 @@
 		float:right;
 	}
 	aside{
+		margin-top: 300px;
+		position:fixed;
+	}
+	#tpIcon{
+		margin-top: 130px;
+		margin-right: 50px;
+	}
+	aside ul{
 		width:80px;
 		border:1px solid #E9E8ED;
-		margin-top: 10px;
-		position:fixed;
+		border-bottom:0;
 		background-color: white;
 	}
 	aside li{
-		margin-bottom: 10px;
+		padding-bottom: 10px;
 		text-align: center;
+	}
+	aside .BotLine:hover{
+		background-color: #0B1852;
+		color:white;
+		transition: 0.5s;
 	}
 	aside span{
 		font-weight: bold;
 		color:gray;
 	}
-/*	#tpIcon{
-		position:fixed;
-		margin:right:50px;
-		padding-bottom:100px;
-	}*/
-	.BotLine{
+	.customMenu{
 		margin-top: 10px;
 		padding-bottom:10px;
 		border-bottom: 1px solid #E9E8ED;
 	}
+	.BotLine{
+		padding-top: 10px;
+		padding-bottom:10px;
+		border-bottom: 1px solid #E9E8ED;
+	}
 	#sub1{
+		margin-top:170px;
 		width:270px;
 		height:550px;
 		padding-top:30px;
@@ -135,8 +285,8 @@
 	}
 	#sub1 img{
 		float:right;
-		padding-right: 5px;
-		padding-top: 3px;
+		margin-right: 5px;
+		margin-top: 3px;
 		transition: transform 0.5s;
 	}
 	.colored{
@@ -149,6 +299,7 @@
 		padding-bottom: 30px;
 	}
 	#sub2{
+		margin-top:170px;
 		width:880px;
 		height:1900px;
 		/*border:1px solid #bbbbbb;*/
@@ -188,9 +339,16 @@
 	}
 	#address{
 		float: left;
+		margin-top: 30px;
+		margin-bottom: 30px;
 		margin-left: 50px;
+		font-size:12.5px;
+		text-align: left;
+		color:gray;
 	}
 	#customer{
+		margin-top: 30px;
+		margin-bottom: 30px;
 		float:right;
 		margin-right: 70px;
 	}
@@ -248,6 +406,61 @@
 		color:white;
 		transition: 0.5s;
 	}
+	#aboutLink{
+		border-top: 1px solid #E9E8ED;
+		text-align: center;
+	}
+	#aboutLink .bigFont2{
+		font-weight: bold;
+		font-size:17px;
+	}
+	#aboutLink li{
+		display: inline-block;
+		font-size: 14px;
+		padding-right: 12px;
+		padding-left:5px;
+	}
+	#aboutLink li:hover{
+		cursor: pointer;
+	}
+	#other{
+		margin-top: 30px;
+		text-align: center;
+
+	}
+	#other .coloredText{
+		color:#2CAB87;
+	}
+	#other li{
+		display: inline-block;
+		font-size: 13.5px;
+		color:gray;
+	}
+	#other>li{
+		font-weight:bold;
+	}
+	#rect{
+		margin-left:20px;
+	}
+	#rect li{
+		height:20px;
+		width:200px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left:10px;
+		border:1px solid #E9E8ED;
+		text-align: left;
+	}
+	#rect img{
+		float:right;
+		transform: rotate(180deg);
+		margin-top: 3px;
+		margin-right: 10px;
+		transition: transform 0.5s;
+	}
+	#rect img:active{
+		transform: rotate(360deg);
+	}
 	a:link{
 		color:black;
 		text-decoration: none;
@@ -268,50 +481,435 @@
 	<button><img src="./img/searchButton.png" width=40></button>
 </div>
 <div id="chart">
-	<img src="./img/chart.png" width=200>
+	<div class="dropdown">
+	<img src="./img/chart.png" width=170>
+	<img src="./img/chartArrow.png" id="ChartArrow" width=30>
+		<div class="dropdownContents">
+			<div>인기키워드</div>
+		<ul>
+			<li><span>1</span><label> 코로나19</label></li>
+			<li><span>2</span><label> 자가격리</label></li>
+			<li><span>3</span><label> 메르스</label></li>
+			<li><span>4</span><label> 코로나19예방수칙</label></li>
+			<li><span>5</span><label> 예방접종</label></li>
+			<li><span>6</span><label> 사회적거리두기</label></li>
+			<li><span>7</span><label> 대응지침</label></li>
+			<li><span>8</span><label> 손씻기</label></li>
+			<li><span>9</span><label> 마스크</label></li>
+			<li><span>10</span><label>여름철감염병</label></li>
+		</ul>
+		</div>
+	</div>
 </div>
-<div id="top">
+<div class="top">
 	<a href="./intro.html">마이페이지</a>
 </div>
 </header>
 <div class="clear"></div>
-<nav>
-	<ul>
-		<li>감염병</li>
-		<li>건강정보</li>
-		<li>정책정보</li>
-		<li>연구개발</li>
-		<li>알림·자료</li>
-		<li>간행물·통계</li>
-		<li>민원·정보공개</li>
-		<li>기관소개</li>
-		<li>사업별홈페이지</li>
+<nav id="fixed">
+	<div id="menu1">
+	<ul class="main">
+		<li><a href="#">감염병</a>
+		<div class="menu2">
+			<ul class="sub">
+				<li><a href="#">감염병정보</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">해외감염정보</a></li>
+				<ul id="sub_sub">
+					<li>해외질병</li>
+					<li>해외감염병NOW</li>
+					<li>예방접종정보</li>
+					<li>국가별요구사항</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">감염병유행정보</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">결핵</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">예방접종</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">감염병간행물</a></li>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">건강정보</a>
+		<div class="menu2">
+			<ul class="sub">
+				<li><a href="#">손상정보</a></li>
+				<ul id="sub_sub">
+					<li>교통사고</li>
+					<li>어린이손상</li>
+					<li>익수</li>
+					<li>자해/자살</li>
+					<li>직업손상</li>
+					<li>질식</li>
+					<li>추락/낙상</li>
+					<li>폭력/타살</li>
+					<li>화상</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">국가건강정보포털</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">희귀질환정보</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#"><img src="./img/dropdownimg1.png"></a></li>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">정책정보</a>
+		<div class="menu2">
+			<ul class="sub">
+			<li><a href="#">감염병</a></li>
+				<ul id="sub_sub">
+					<li>감염병위기대응</li>
+					<li>수인성식품매개감염병관리</li>
+					<li>호흡기감염병관리</li>
+					<li>인수공통감염병관리</li>
+					<li>결핵관리</li>
+					<li>후천성면역결핍증관리</li>
+					<li>의료감염관리</li>
+					<li>감염병실험분석</li>
+					<li>검역관리</li>
+					<li>감염병감시체계</li>
+					<li>감염병정보화사업</li>
+					<li>시도감염병관리지원단</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">생물안전</a></li>
+				<ul id="sub_sub">
+					<li>생물안전및보안</li>
+					<li>고위험병원체국가관리</li>
+					<li>유전자변형생물체국가승인</li>
+					<li>생물안전연구시설국가안전관리</li>
+					<li>병원체생물안전정보</li>
+					<li>자료실</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">만성질환</a></li>
+				<ul id="sub_sub">
+					<li>건강조사</li>
+					<li>만성질환예방관리</li>
+					<li>기준관리</li>
+					<li>희귀질환관리</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">기후변화</a></li>
+				<ul id="sub_sub">
+					<li>폭염</li>
+					<li>한파</li>
+					<li>미세먼지</li>
+					<li>기후변화건강적응대책</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">의료방사선안전관리</a></li>
+				<ul id="sub_sub">
+					<li>방사선피폭및방어</li>
+					<li>의료방사선게시판</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">장기·조직·혈액관리</a></li>
+				<ul id="sub_sub">
+					<li>장기·인체조직관리</li>
+					<li>혈액안전감시</li>
+				</ul>
+			</ul>
+		</div>
+		</li>
+	
+		<li><a href="#">연구개발</a>
+		<div class="menu2">
+			<ul class="sub">
+				<li><a href="#">질병연구</a></li>
+				<ul id="sub_sub">
+					<li>질병연구</li>
+					<li>범부처감염병대응R&D</li>
+					<li>수사기술수요조사</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">연구성과</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">연구자원인프라</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">생명윤리</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">감염병간행물</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#"><img src="./img/dropdownimg2.png" width="350px"></a></li>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">알림·자료</a>
+		<div class="menu2">
+			<ul class="sub">
+			<li><a href="#">이달의건강소식</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">보도자료</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">포토뉴스</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">홍보자료</a></li>
+				<ul id="sub_sub">
+					<li>카드뉴스</li>
+					<li>홍보지</li>
+					<li>영상자료</li>
+					<li>라디오음원</li>
+					<li>교육자료</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">공지사항</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">공고/공시</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">채용공고</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">법령·지침·서식</a></li>
+				<ul id="sub_sub">
+					<li>법령</li>
+					<li>지침</li>
+					<li>서식</li>
+				</ul>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">간행물·통계</a>
+		<div class="menu2">
+			<ul class="sub">
+				<li><a href="#">간행물</a></li>
+				<ul id="sub_sub">
+					<li>주간건강과질병</li>
+					<li>감염병뉴스레터</li>
+					<li>지역사회건강과질병</li>
+					<li>손상예방과건강한안전사회</li>
+					<li>혈액소식지</li>
+					<li>오송 PHRP</li>
+					<li>질병관리백서</li>
+					<li>국립보건연구원연보</li>
+					<li>NH매거진</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">통계</a></li>
+				<ul id="sub_sub">
+					<li>감염병발생정보</li>
+					<li>감염병연보</li>
+					<li>건강통계</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+				<li><a href="#">연구성과</a></li>
+			</ul>	
+			<ul class="sub">
+				<li><a href="#"><img src="./img/dropdownimg3.png" width="300px"></a></li>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">민원·정보공개</a>
+		<div class="menu2">
+			<ul class="sub">
+			<li><a href="#">1339콜센터</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">민원신청</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">나의민원확인</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">생명윤리법관련민원안내</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">사전정보공표</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">정보공개청구</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">공공데이터</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">기관장업무추진비</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">공무국외여행보고서</a></li>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">기관소개</a>
+		<div class="menu2">
+			<ul class="sub">
+			<li><a href="#">소개</a></li>
+			<ul id="sub_sub">
+					<li>인사말</li>
+					<li>약력</li>
+				</ul>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">비전과미션</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">핵심사업</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">연혁</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">조직·직원찾기</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">정부상징</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">오시는길</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">시설안내</a></li>
+			</ul>
+			<ul class="sub">
+			<li><a href="#">누리집이용안내</a></li>
+			<ul id="sub_sub">
+					<li>이용안내</li>
+					<li>사이트맵</li>
+					<li>개인정보처리방침</li>
+					<li>웹접근성품질인증</li>
+					<li>저작권정책</li>
+					<li>메인배너</li>
+					<li>알림존</li>
+				</ul>
+			</ul>
+		</div>
+		</li>
+
+		<li><a href="#">사업별홈페이지</a>
+		<div class="menu2">
+			<ul class="sub">
+			<li class="miniBox"><a href="#">감염병포털</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">예방접종도우미</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">해외감염병NOW</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국립검역소</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">KISED</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">결핵제로</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국가건강정보포털</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">희귀질환헬프라인</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국민건강영양조사</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">지역사회건강조사</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">청소년건강행태조사</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국립장기조직혈액관리원</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">프리온질환저해물질</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국립의과학지식센터</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">오송PHRP</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">임상연구정보서비스</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">임상연구관리시스템</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">임상유전체생명전보</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">줄기세포주등록정보</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">OneHealthAMR포털시스템</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국립중앙인체자원은행</a></li>
+			</ul>
+			<ul class="sub">
+			<li class="miniBox"><a href="#">국가병원체자원은행</a></li>
+			</ul>
+		</div>
+		</li>
+
 	</ul>
+	</div>
 </nav>
 <div class="clear"></div>
 <section>
 	<ul id="sub1">
 		<p class="bigFont">알림·자료</p>
-		<li>이달의건강소식 <img src="./img/arrowDown.png"></li>
-		<li class="colored">보도자료 <img src="./img/arrowUp.png"></li>
-		<li>포토뉴스 <img src="./img/arrowDown.png"></li>
-		<li>홍보자료 <img src="./img/arrowDown.png"></li>
-		<li>공지사항 <img src="./img/arrowDown.png"></li>
-		<li>공고/공시 <img src="./img/arrowDown.png"></li>
-		<li>채용공고 <img src="./img/arrow.png"></li>
-		<li>법령·지침·서식 <img src="./img/arrow.png"></li>
+		<li>이달의건강소식 <img src="./img/rectArrow.png" height=20></li>
+		<li class="colored">보도자료 <img src="./img/WhiterectArrow.png" height=20></li>
+		<li>포토뉴스 <img src="./img/rectArrow.png" height=20></li>
+		<li>홍보자료 <img src="./img/rectArrow.png" height=20></li>
+		<li>공지사항 <img src="./img/rectArrow.png" height=20></li>
+		<li>공고/공시 <img src="./img/rectArrow.png" height=20></li>
+		<li>채용공고 <img src="./img/rectArrow.png" height=20></li>
+		<li>법령·지침·서식 <img src="./img/rectArrow.png" height=20></li>
 	</ul>
 </section>
 <label id="right">
 <aside>
 	<ul>
-		<li class="BotLine"><span>사용자별<br>맞춤메뉴</span></li>
+		<li class="customMenu"><span>사용자별<br>맞춤메뉴</span></li>
 		<li class="BotLine">일반</li>
 		<li class="BotLine">연구</li>
-		<li>언론</li>
+		<li class="BotLine">언론</li>
 	</ul>
-</label>
+	<br>
+	<div id="tpIcon"><a href="#top"><img src="./img/topIcon.png" width=50></a></div>
 </aside>
+</label>
 
 </label>
 <section>
@@ -386,8 +984,36 @@
 	<div class="tpIcon"><img src="./img/topIcon.png"></div>
 </label> -->
 <footer>
+	<div>
+		<ul id="aboutLink">
+			<li class="bigFont2">관련링크<img src="./img/linkButton.png" width=30> </li>
+			<li>임상진료지침 디지털 가이드라인</li>
+			<li>KoGES</li>
+			<li>질병관리본부국제학술지(OsongPHRP)</li>
+			<li>만성신장병코호트연구</li>
+			<li>국민건강영양조사</li>
+			<li>국립의과학지식센터</li>
+			<li>보건복지통계</li>
+		</ul>
+	</div>
+	<div>
+		<ul id="other">
+			<li>이용안내</li>
+			<li class=coloredText>개인정보처리방침</li>
+			<li>웹접근성품질인증</li>
+			<li>저작권정책</li>
+			<label id="rect">
+			<li>질병관리본부 관련기관<img src="./img/rectArrow.png" height=15></li>
+			<li>보건환경연구원<img src="./img/rectArrow.png" height=15></li>
+			<li>보건복지부 및 소속기관<img src="./img/rectArrow.png" height=15></li>
+			<li>보건복지부 산하기관<img src="./img/rectArrow.png" height=15></li>
+			</label>
+		</ul>
+	</div>
 	<div id="address">
-		<img src="./img/address.PNG">
+		<!-- <img src="./img/address.PNG"> -->
+		(28159) 충북 청주시 흥덕구 오송읍 오송생명2로 187 오송보건의료행정타운내 질병관리본부 ☎전화번호1339<br>
+		COPYRIGHT © 2019 질병관리본부 ALL RIGHTS RESERVED.
 	</div>
 	<div id="customer">
 		<img src="./img/links.PNG">
